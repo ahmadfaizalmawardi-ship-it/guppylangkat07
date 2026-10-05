@@ -1,0 +1,719 @@
+html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+
+  <title>Guppy Langkat | Ikan Guppy Premium</title>
+
+  <meta name="description"
+        content="Guppy Langkat - Tempat informasi dan pemesanan ikan guppy. Hubungi kami melalui WhatsApp untuk mengetahui stok dan informasi terbaru.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+  <!-- Font Awesome untuk logo Instagram, TikTok, WhatsApp -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #050505;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================= */
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: rgba(0, 200, 255, 0.08);
+      filter: blur(120px);
+      border-radius: 50%;
+      top: -150px;
+      left: -150px;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: rgba(0, 255, 180, 0.05);
+      filter: blur(120px);
+      border-radius: 50%;
+      bottom: -200px;
+      right: -150px;
+      z-index: -2;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 7%;
+      background: rgba(5, 5, 5, 0.72);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: #20d9ff;
+    }
+
+    .nav-wa {
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 10px 17px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .nav-wa:hover {
+      background: #20d9ff;
+      color: #000;
+      border-color: #20d9ff;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 70px;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 17px;
+      border-radius: 50px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #bdefff;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: #20d9ff;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #20d9ff;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(55px, 10vw, 105px);
+      line-height: .95;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, #ffffff, #55e5ff, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: shine 4s linear infinite;
+    }
+
+    .subtitle {
+      max-width: 620px;
+      margin: auto;
+      color: #a7a7a7;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 38px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .35s;
+    }
+
+    .btn-primary {
+      background: #20d9ff;
+      color: #001015;
+      box-shadow: 0 0 35px rgba(32,217,255,.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 35px rgba(32,217,255,.35);
+    }
+
+    .btn-secondary {
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.03);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,.4);
+      background: rgba(255,255,255,.08);
+    }
+
+    /* =========================
+       INFO SECTION
+    ========================= */
+
+    .section {
+      padding: 100px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title small {
+      color: #20d9ff;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(35px, 6vw, 55px);
+      margin-top: 12px;
+    }
+
+    .cards {
+      max-width: 1050px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 35px 25px;
+      border-radius: 22px;
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.07),
+        rgba(255,255,255,.025)
+      );
+      border: 1px solid rgba(255,255,255,.08);
+      text-align: center;
+      transition: .4s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(32,217,255,.35);
+      box-shadow: 0 20px 50px rgba(0,0,0,.35);
+    }
+
+    .icon {
+      width: 62px;
+      height: 62px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      background: rgba(32,217,255,.08);
+      color: #20d9ff;
+      font-size: 25px;
+    }
+
+    .card h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #929292;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 850px;
+      margin: auto;
+      padding: 60px 30px;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at top,
+        rgba(32,217,255,.12),
+        transparent 55%),
+        rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .contact-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(38px, 6vw, 58px);
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #999;
+      max-width: 560px;
+      margin: auto;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .social {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      font-size: 19px;
+      transition: .3s;
+    }
+
+    .social:hover {
+      transform: translateY(-5px) scale(1.05);
+      background: #20d9ff;
+      color: #000;
+      border-color: #20d9ff;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid rgba(255,255,255,.06);
+      color: #666;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    footer strong {
+      color: #aaa;
+    }
+
+    /* =========================
+       FLOATING WHATSAPP
+    ========================= */
+
+    .floating-wa {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      font-size: 27px;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+      z-index: 999;
+      animation: pulse 2s infinite;
+    }
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes shine {
+      to {
+        background-position: 200% center;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37,211,102,.45);
+      }
+
+      70% {
+        box-shadow: 0 0 0 18px rgba(37,211,102,0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(37,211,102,0);
+      }
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 750px) {
+
+      nav {
+        padding: 0 20px;
+      }
+
+      .logo {
+        font-size: 16px;
+      }
+
+      .nav-wa {
+        padding: 9px 13px;
+        font-size: 10px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .subtitle {
+        font-size: 13px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+        max-width: 430px;
+      }
+
+      .section {
+        padding: 75px 20px;
+      }
+
+      .contact {
+        padding: 75px 20px;
+      }
+
+      .contact-box {
+        padding: 45px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
+  <nav>
+    <div class="logo">
+      GUPPY <span>LANGKAT</span>
+    </div>
+
+    <a
+      class="nav-wa"
+      href="https://wa.me/6283159892249?text=Halo%20Guppy%20Langkat%2C%20saya%20ingin%20bertanya%20tentang%20ikan%20guppy."
+      target="_blank">
+      <i class="fa-brands fa-whatsapp"></i>
+      HUBUNGI KAMI
+    </a>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="badge">
+        GUPPY STORE • LANGKAT
+      </div>
+
+      <h1>
+        <span>Guppy Langkat</span>
+      </h1>
+
+      <p class="subtitle">
+        Selamat datang di Guppy Langkat.
+        Temukan informasi mengenai ikan guppy yang tersedia
+        dan langsung hubungi kami untuk mengetahui stok,
+        jenis, serta informasi terbaru.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a
+          class="btn btn-primary"
+          href="https://wa.me/6283159892249?text=Halo%20Guppy%20Langkat%2C%20saya%20ingin%20bertanya%20tentang%20ikan%20guppy."
+          target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+          Chat WhatsApp
+        </a>
+
+        <a
+          class="btn btn-secondary"
+          href="https://www.instagram.com/faizofficial.id/"
+          target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+          Instagram
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       INFO
+  ========================= -->
+
+  <section class="section">
+
+    <div class="section-title">
+      <small>Guppy Langkat</small>
+      <h2>Kenapa Hubungi Kami?</h2>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <div class="icon">
+          <i class="fa-solid fa-fish"></i>
+        </div>
+
+        <h3>Info Guppy</h3>
+
+        <p>
+          Tanyakan langsung jenis dan ikan guppy
+          yang sedang tersedia kepada admin.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">
+          <i class="fa-solid fa-comments"></i>
+        </div>
+
+        <h3>Konsultasi</h3>
+
+        <p>
+          Hubungi kami untuk mendapatkan informasi
+          dan konsultasi seputar ikan guppy.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+
+        <h3>Respon Cepat</h3>
+
+        <p>
+          Klik tombol WhatsApp untuk langsung
+          terhubung dengan admin Guppy Langkat.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section class="contact">
+
+    <div class="contact-box">
+
+      <h2>Tertarik dengan Guppy?</h2>
+
+      <p>
+        Jangan ragu untuk menghubungi kami.
+        Untuk mengetahui stok, jenis, harga,
+        dan informasi lainnya, silakan chat admin
+        melalui WhatsApp.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a
+          class="btn btn-primary"
+          href="https://wa.me/6283159892249?text=Halo%20Guppy%20Langkat%2C%20saya%20ingin%20info%20ikan%20guppy."
+          target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+          0831 5989 2249
+        </a>
+
+      </div>
+
+
+      <!-- SOCIAL MEDIA -->
+
+      <div class="socials">
+
+        <!-- Instagram -->
+        <a
+          class="social"
+          href="https://www.instagram.com/faizofficial.id/"
+          target="_blank"
+          aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <!-- TikTok -->
+        <a
+          class="social"
+          href="https://www.tiktok.com/@faizofficial.id"
+          target="_blank"
+          aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <!-- WhatsApp -->
+        <a
+          class="social"
+          href="https://wa.me/6283159892249"
+          target="_blank"
+          aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+    © 2026 <strong>Guppy Langkat</strong> — All Rights Reserved.
+  </footer>
+
+
+  <!-- FLOATING WHATSAPP -->
+
+  <a
+    class="floating-wa"
+    href="https://wa.me/6283159892249?text=Halo%20Guppy%20Langkat%2C%20saya%20ingin%20bertanya."
+    target="_blank"
+    aria-label="Chat WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+</body>
+</html>
